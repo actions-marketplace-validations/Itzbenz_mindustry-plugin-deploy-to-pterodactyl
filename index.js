@@ -5,13 +5,13 @@ const fs = require('fs');
 // most @actions toolkit packages have async methods
 async function run() {
     try {
-        const artifactPath = core.getInput('artifactPath', {required: true});
+        const artifactPath = core.getInput('artifact', {required: true});
         const artifactName = artifactPath.split('/').pop();
         const endpoint = core.getInput('endpoint', {required: true, trimWhitespace: true});
-        const token = core.getInput('token', {required: true, trimWhitespace: true});
-        const serverId = core.getInput('serverId', {required: true, trimWhitespace: true});
-        const doRestart = core.getInput('doRestart', {required: false, trimWhitespace: true}) === 'true';
-        const targetPath = core.getInput('targetPath', {
+        const apiToken = core.getInput('token', {required: true, trimWhitespace: true});
+        const serverId = core.getInput('server', {required: true, trimWhitespace: true});
+        const doRestart = core.getInput('restart', {required: false, trimWhitespace: true}) === 'true';
+        const targetPath = core.getInput('target-path', {
             required: false,
             trimWhitespace: true
         }) || `config/mods/${artifactName}`;
@@ -22,7 +22,7 @@ async function run() {
         const axios = Axios.create({
             baseURL: endpoint,
             headers: {
-                Authorization: `Bearer ${token}`,
+                Authorization: `Bearer ${apiToken}`,
                 "Accept": "application/json",
             }
         });

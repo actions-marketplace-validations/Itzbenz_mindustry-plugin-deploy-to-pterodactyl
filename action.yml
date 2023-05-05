@@ -10,10 +10,10 @@ inputs:
   endpoint:
     description: 'The API endpoint of the Pterodactyl server e.g. "https://pterodactyl.file.properties/'
     required: true
-  server-id:
+  server:
     description: 'The ID of the Pterodactyl server'
     required: true
-  api-key:
+  token:
     description: 'The API key of the Pterodactyl server'
     required: true
   restart:
