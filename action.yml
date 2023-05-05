@@ -8,7 +8,7 @@ inputs:
     description: 'The path to deploy the plugin to'
     required: false
   endpoint:
-    description: 'The API endpoint of the Pterodactyl server'
+    description: 'The API endpoint of the Pterodactyl server e.g. "https://pterodactyl.file.properties/'
     required: true
   server-id:
     description: 'The ID of the Pterodactyl server'
