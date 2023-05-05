@@ -1,10 +1,26 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Mindustry Plugin Deploy To Pterodactyl'
+description: 'Deploy a Mindustry plugin to a Pterodactyl server'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  artifact:
+    description: 'The path to the plugin artifact'
     required: true
-    default: '1000'
+  target-path:
+    description: 'The path to deploy the plugin to'
+    required: false
+  endpoint:
+    description: 'The API endpoint of the Pterodactyl server'
+    required: true
+  server-id:
+    description: 'The ID of the Pterodactyl server'
+    required: true
+  api-key:
+    description: 'The API key of the Pterodactyl server'
+    required: true
+  restart:
+    description: 'Whether to restart the server after deploying the plugin'
+    required: false
+    default: false
+
 outputs:
   time: # output will be available to future steps
     description: 'The current time after waiting'
