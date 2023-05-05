@@ -2,7 +2,6 @@ const core = require('@actions/core');
 const Axios = require('axios');
 const fs = require('fs');
 
-
 // most @actions toolkit packages have async methods
 async function run() {
     try {
@@ -32,7 +31,7 @@ async function run() {
             core.info("Alerting the horde");
             try {
                 await axios.post(`/api/client/servers/${serverId}/command`, {
-                    command: "say Server is restarting in 10 seconds",
+                    command: "say Server is restarting in 10 seconds (maybe)",
                 });
             } catch (e) { /* empty */
             }
