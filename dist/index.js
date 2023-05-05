@@ -16,12 +16,12 @@ require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
             }) : (function (o, m, k, k2) {
                 if (k2 === undefined) k2 = k;
                 o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
+            }));
+            var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function (o, v) {
+                Object.defineProperty(o, "default", {enumerable: true, value: v});
+            }) : function (o, v) {
+                o["default"] = v;
+            });
             var __importStar = (this && this.__importStar) || function (mod) {
                 if (mod && mod.__esModule) return mod;
                 var result = {};
@@ -44,16 +44,19 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
              *   ::warning::This is the message
              *   ::set-env name=MY_VAR::some value
              */
-function issueCommand(command, properties, message) {
-    const cmd = new Command(command, properties, message);
-    process.stdout.write(cmd.toString() + os.EOL);
-}
-exports.issueCommand = issueCommand;
-function issue(name, message = '') {
-    issueCommand(name, {}, message);
-}
-exports.issue = issue;
-const CMD_STRING = '::';
+            function issueCommand(command, properties, message) {
+                const cmd = new Command(command, properties, message);
+                process.stdout.write(cmd.toString() + os.EOL);
+            }
+
+            exports.issueCommand = issueCommand;
+
+            function issue(name, message = '') {
+                issueCommand(name, {}, message);
+            }
+
+            exports.issue = issue;
+            const CMD_STRING = '::';
 class Command {
     constructor(command, properties, message) {
         if (!command) {
@@ -93,14 +96,15 @@ function escapeData(s) {
         .replace(/\r/g, '%0D')
         .replace(/\n/g, '%0A');
 }
-function escapeProperty(s) {
-    return utils_1.toCommandValue(s)
-        .replace(/%/g, '%25')
-        .replace(/\r/g, '%0D')
-        .replace(/\n/g, '%0A')
-        .replace(/:/g, '%3A')
-        .replace(/,/g, '%2C');
-}
+
+            function escapeProperty(s) {
+                return utils_1.toCommandValue(s)
+                    .replace(/%/g, '%25')
+                    .replace(/\r/g, '%0D')
+                    .replace(/\n/g, '%0A')
+                    .replace(/:/g, '%3A')
+                    .replace(/,/g, '%2C');
+            }
 
 //# sourceMappingURL=command.js.map
 
@@ -122,12 +126,12 @@ function escapeProperty(s) {
             }) : (function (o, m, k, k2) {
                 if (k2 === undefined) k2 = k;
                 o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
+            }));
+            var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function (o, v) {
+                Object.defineProperty(o, "default", {enumerable: true, value: v});
+            }) : function (o, v) {
+                o["default"] = v;
+            });
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -135,32 +139,37 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) {
-            try {
-                step(generator.next(value));
-            } catch (e) {
-                reject(e);
-            }
-        }
+            var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+                function adopt(value) {
+                    return value instanceof P ? value : new P(function (resolve) {
+                        resolve(value);
+                    });
+                }
 
-        function rejected(value) {
-            try {
-                step(generator["throw"](value));
-            } catch (e) {
-                reject(e);
-            }
-        }
+                return new (P || (P = Promise))(function (resolve, reject) {
+                    function fulfilled(value) {
+                        try {
+                            step(generator.next(value));
+                        } catch (e) {
+                            reject(e);
+                        }
+                    }
 
-        function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
+                    function rejected(value) {
+                        try {
+                            step(generator["throw"](value));
+                        } catch (e) {
+                            reject(e);
+                        }
+                    }
 
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
+                    function step(result) {
+                        result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+                    }
+
+                    step((generator = generator.apply(thisArg, _arguments || [])).next());
+                });
+            };
             Object.defineProperty(exports, "__esModule", ({value: true}));
             exports.getIDToken = exports.getState = exports.saveState = exports.group = exports.endGroup = exports.startGroup = exports.info = exports.notice = exports.warning = exports.error = exports.debug = exports.isDebug = exports.setFailed = exports.setCommandEcho = exports.setOutput = exports.getBooleanInput = exports.getMultilineInput = exports.getInput = exports.addPath = exports.setSecret = exports.exportVariable = exports.ExitCode = void 0;
             const command_1 = __nccwpck_require__(7351);
@@ -179,16 +188,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
                  */
                 ExitCode[ExitCode["Success"] = 0] = "Success";
                 /**
-     * A code indicating that the action was a failure
-     */
-    ExitCode[ExitCode["Failure"] = 1] = "Failure";
-})(ExitCode = exports.ExitCode || (exports.ExitCode = {}));
+                 * A code indicating that the action was a failure
+                 */
+                ExitCode[ExitCode["Failure"] = 1] = "Failure";
+            })(ExitCode = exports.ExitCode || (exports.ExitCode = {}));
 //-----------------------------------------------------------------------
 // Variables
 //-----------------------------------------------------------------------
-/**
- * Sets env variable for this action and future actions in the job
- * @param name the name of the variable to set
+            /**
+             * Sets env variable for this action and future actions in the job
+             * @param name the name of the variable to set
  * @param val the value of the variable. Non-string values will be converted to a string via JSON.stringify
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -486,16 +495,16 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 }));
 var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
     Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
+}) : function (o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+            var __importStar = (this && this.__importStar) || function (mod) {
+                if (mod && mod.__esModule) return mod;
+                var result = {};
+                if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+                __setModuleDefault(result, mod);
+                return result;
+            };
             Object.defineProperty(exports, "__esModule", ({value: true}));
             exports.prepareKeyValueMessage = exports.issueFileCommand = void 0;
 // We use any as a valid input type
@@ -515,23 +524,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
                 }
                 fs.appendFileSync(filePath, `${utils_1.toCommandValue(message)}${os.EOL}`, {
                     encoding: 'utf8'
-    });
-}
-exports.issueFileCommand = issueFileCommand;
-function prepareKeyValueMessage(key, value) {
-    const delimiter = `ghadelimiter_${uuid_1.v4()}`;
-    const convertedValue = utils_1.toCommandValue(value);
-    // These should realistically never happen, but just in case someone finds a
-    // way to exploit uuid generation let's not allow keys or values that contain
-    // the delimiter.
-    if (key.includes(delimiter)) {
-        throw new Error(`Unexpected input: name should not contain the delimiter "${delimiter}"`);
-    }
-    if (convertedValue.includes(delimiter)) {
-        throw new Error(`Unexpected input: value should not contain the delimiter "${delimiter}"`);
-    }
-    return `${key}<<${delimiter}${os.EOL}${convertedValue}${os.EOL}${delimiter}`;
-}
+                });
+            }
+
+            exports.issueFileCommand = issueFileCommand;
+
+            function prepareKeyValueMessage(key, value) {
+                const delimiter = `ghadelimiter_${uuid_1.v4()}`;
+                const convertedValue = utils_1.toCommandValue(value);
+                // These should realistically never happen, but just in case someone finds a
+                // way to exploit uuid generation let's not allow keys or values that contain
+                // the delimiter.
+                if (key.includes(delimiter)) {
+                    throw new Error(`Unexpected input: name should not contain the delimiter "${delimiter}"`);
+                }
+                if (convertedValue.includes(delimiter)) {
+                    throw new Error(`Unexpected input: value should not contain the delimiter "${delimiter}"`);
+                }
+                return `${key}<<${delimiter}${os.EOL}${convertedValue}${os.EOL}${delimiter}`;
+            }
 
             exports.prepareKeyValueMessage = prepareKeyValueMessage;
 //# sourceMappingURL=file-command.js.map
@@ -592,16 +603,17 @@ function prepareKeyValueMessage(key, value) {
 
                 static getRequestToken() {
                     const token = process.env['ACTIONS_ID_TOKEN_REQUEST_TOKEN'];
-        if (!token) {
-            throw new Error('Unable to get ACTIONS_ID_TOKEN_REQUEST_TOKEN env variable');
-        }
-        return token;
-    }
-    static getIDTokenUrl() {
-        const runtimeUrl = process.env['ACTIONS_ID_TOKEN_REQUEST_URL'];
-        if (!runtimeUrl) {
-            throw new Error('Unable to get ACTIONS_ID_TOKEN_REQUEST_URL env variable');
-        }
+                    if (!token) {
+                        throw new Error('Unable to get ACTIONS_ID_TOKEN_REQUEST_TOKEN env variable');
+                    }
+                    return token;
+                }
+
+                static getIDTokenUrl() {
+                    const runtimeUrl = process.env['ACTIONS_ID_TOKEN_REQUEST_URL'];
+                    if (!runtimeUrl) {
+                        throw new Error('Unable to get ACTIONS_ID_TOKEN_REQUEST_URL env variable');
+                    }
         return runtimeUrl;
     }
     static getCall(id_token_url) {
@@ -635,8 +647,7 @@ function prepareKeyValueMessage(key, value) {
                 const id_token = yield OidcClient.getCall(id_token_url);
                 core_1.setSecret(id_token);
                 return id_token;
-            }
-            catch (error) {
+            } catch (error) {
                 throw new Error(`Error message: ${error.message}`);
             }
         });
@@ -664,12 +675,12 @@ function prepareKeyValueMessage(key, value) {
             }) : (function (o, m, k, k2) {
                 if (k2 === undefined) k2 = k;
                 o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
+            }));
+            var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function (o, v) {
+                Object.defineProperty(o, "default", {enumerable: true, value: v});
+            }) : function (o, v) {
+                o["default"] = v;
+            });
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -772,16 +783,16 @@ function toPlatformPath(pth) {
                 /**
                  * Finds the summary file path from the environment, rejects if env var is not found or file does not exist
                  * Also checks r/w permissions.
-     *
-     * @returns step summary file path
-     */
-    filePath() {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (this._filePath) {
-                return this._filePath;
-            }
-            const pathFromEnv = process.env[exports.SUMMARY_ENV_VAR];
-            if (!pathFromEnv) {
+                 *
+                 * @returns step summary file path
+                 */
+                filePath() {
+                    return __awaiter(this, void 0, void 0, function* () {
+                        if (this._filePath) {
+                            return this._filePath;
+                        }
+                        const pathFromEnv = process.env[exports.SUMMARY_ENV_VAR];
+                        if (!pathFromEnv) {
                 throw new Error(`Unable to find environment variable for $${exports.SUMMARY_ENV_VAR}. Check if your runtime environment supports job summaries.`);
             }
             try {
@@ -1020,10 +1031,10 @@ function toPlatformPath(pth) {
      * @returns {Summary} summary instance
      */
     addLink(text, href) {
-        const element = this.wrap('a', text, { href });
+        const element = this.wrap('a', text, {href});
         return this.addRaw(element).addEOL();
     }
-}
+            }
 
             const _summary = new Summary();
             /**
@@ -1048,16 +1059,15 @@ function toPlatformPath(pth) {
 
             /**
              * Sanitizes an input into a string so it can be passed into issueCommand safely
- * @param input input to sanitize into a string
- */
-function toCommandValue(input) {
-    if (input === null || input === undefined) {
-        return '';
-    }
-    else if (typeof input === 'string' || input instanceof String) {
-        return input;
-    }
-    return JSON.stringify(input);
+             * @param input input to sanitize into a string
+             */
+            function toCommandValue(input) {
+                if (input === null || input === undefined) {
+                    return '';
+                } else if (typeof input === 'string' || input instanceof String) {
+                    return input;
+                }
+                return JSON.stringify(input);
 }
 exports.toCommandValue = toCommandValue;
 /**
@@ -1118,9 +1128,10 @@ function toCommandProperties(annotationProperties) {
                     function step(result) {
                         result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
                     }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
+
+                    step((generator = generator.apply(thisArg, _arguments || [])).next());
+                });
+            };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PersonalAccessTokenCredentialHandler = exports.BearerCredentialHandler = exports.BasicCredentialHandler = void 0;
 class BasicCredentialHandler {
@@ -1184,6 +1195,7 @@ class PersonalAccessTokenCredentialHandler {
     canHandleAuthentication() {
         return false;
     }
+
     handleAuthentication() {
         return __awaiter(this, void 0, void 0, function* () {
             throw new Error('not implemented');
@@ -1212,51 +1224,51 @@ class PersonalAccessTokenCredentialHandler {
                 });
             }) : (function (o, m, k, k2) {
                 if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
+                o[k2] = m[k];
+            }));
+            var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function (o, v) {
+                Object.defineProperty(o, "default", {enumerable: true, value: v});
+            }) : function (o, v) {
+                o["default"] = v;
+            });
+            var __importStar = (this && this.__importStar) || function (mod) {
+                if (mod && mod.__esModule) return mod;
+                var result = {};
     if (mod != null) for (var k in mod) if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
-};
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) {
-        return value instanceof P ? value : new P(function (resolve) {
-            resolve(value);
-        });
-    }
+            };
+            var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+                function adopt(value) {
+                    return value instanceof P ? value : new P(function (resolve) {
+                        resolve(value);
+                    });
+                }
 
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) {
-            try {
-                step(generator.next(value));
-            } catch (e) {
-                reject(e);
-            }
-        }
+                return new (P || (P = Promise))(function (resolve, reject) {
+                    function fulfilled(value) {
+                        try {
+                            step(generator.next(value));
+                        } catch (e) {
+                            reject(e);
+                        }
+                    }
 
-        function rejected(value) {
-            try {
-                step(generator["throw"](value));
-            } catch (e) {
-                reject(e);
-            }
-        }
+                    function rejected(value) {
+                        try {
+                            step(generator["throw"](value));
+                        } catch (e) {
+                            reject(e);
+                        }
+                    }
 
-        function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
+                    function step(result) {
+                        result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+                    }
 
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
+                    step((generator = generator.apply(thisArg, _arguments || [])).next());
+                });
+            };
             Object.defineProperty(exports, "__esModule", ({value: true}));
             exports.HttpClient = exports.isHttps = exports.HttpClientResponse = exports.HttpClientError = exports.getProxyUrl = exports.MediaTypes = exports.Headers = exports.HttpCodes = void 0;
             const http = __importStar(__nccwpck_require__(3685));
@@ -1273,16 +1285,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
                 HttpCodes[HttpCodes["NotModified"] = 304] = "NotModified";
                 HttpCodes[HttpCodes["UseProxy"] = 305] = "UseProxy";
                 HttpCodes[HttpCodes["SwitchProxy"] = 306] = "SwitchProxy";
-    HttpCodes[HttpCodes["TemporaryRedirect"] = 307] = "TemporaryRedirect";
-    HttpCodes[HttpCodes["PermanentRedirect"] = 308] = "PermanentRedirect";
-    HttpCodes[HttpCodes["BadRequest"] = 400] = "BadRequest";
-    HttpCodes[HttpCodes["Unauthorized"] = 401] = "Unauthorized";
-    HttpCodes[HttpCodes["PaymentRequired"] = 402] = "PaymentRequired";
-    HttpCodes[HttpCodes["Forbidden"] = 403] = "Forbidden";
-    HttpCodes[HttpCodes["NotFound"] = 404] = "NotFound";
-    HttpCodes[HttpCodes["MethodNotAllowed"] = 405] = "MethodNotAllowed";
-    HttpCodes[HttpCodes["NotAcceptable"] = 406] = "NotAcceptable";
-    HttpCodes[HttpCodes["ProxyAuthenticationRequired"] = 407] = "ProxyAuthenticationRequired";
+                HttpCodes[HttpCodes["TemporaryRedirect"] = 307] = "TemporaryRedirect";
+                HttpCodes[HttpCodes["PermanentRedirect"] = 308] = "PermanentRedirect";
+                HttpCodes[HttpCodes["BadRequest"] = 400] = "BadRequest";
+                HttpCodes[HttpCodes["Unauthorized"] = 401] = "Unauthorized";
+                HttpCodes[HttpCodes["PaymentRequired"] = 402] = "PaymentRequired";
+                HttpCodes[HttpCodes["Forbidden"] = 403] = "Forbidden";
+                HttpCodes[HttpCodes["NotFound"] = 404] = "NotFound";
+                HttpCodes[HttpCodes["MethodNotAllowed"] = 405] = "MethodNotAllowed";
+                HttpCodes[HttpCodes["NotAcceptable"] = 406] = "NotAcceptable";
+                HttpCodes[HttpCodes["ProxyAuthenticationRequired"] = 407] = "ProxyAuthenticationRequired";
     HttpCodes[HttpCodes["RequestTimeout"] = 408] = "RequestTimeout";
     HttpCodes[HttpCodes["Conflict"] = 409] = "Conflict";
     HttpCodes[HttpCodes["Gone"] = 410] = "Gone";
@@ -1821,8 +1833,7 @@ class HttpClient {
                     const err = new HttpClientError(msg, statusCode);
                     err.result = response.result;
                     reject(err);
-                }
-                else {
+                } else {
                     resolve(response);
                 }
             }));
@@ -1849,16 +1860,15 @@ class HttpClient {
                 const usingSsl = reqUrl.protocol === 'https:';
                 if (checkBypass(reqUrl)) {
                     return undefined;
-    }
-    const proxyVar = (() => {
-        if (usingSsl) {
-            return process.env['https_proxy'] || process.env['HTTPS_PROXY'];
-        }
-        else {
-            return process.env['http_proxy'] || process.env['HTTP_PROXY'];
-        }
-    })();
-    if (proxyVar) {
+                }
+                const proxyVar = (() => {
+                    if (usingSsl) {
+                        return process.env['https_proxy'] || process.env['HTTPS_PROXY'];
+                    } else {
+                        return process.env['http_proxy'] || process.env['HTTP_PROXY'];
+                    }
+                })();
+                if (proxyVar) {
         return new URL(proxyVar);
     }
     else {
@@ -5378,12 +5388,12 @@ function checkBypass(reqUrl) {
 
             function httpOverHttp(options) {
                 var agent = new TunnelingAgent(options);
-  agent.request = http.request;
-  return agent;
-}
+                agent.request = http.request;
+                return agent;
+            }
 
-function httpsOverHttp(options) {
-  var agent = new TunnelingAgent(options);
+            function httpsOverHttp(options) {
+                var agent = new TunnelingAgent(options);
   agent.request = http.request;
   agent.createSocket = createSecureSocket;
   agent.defaultPort = 443;
@@ -5612,11 +5622,11 @@ var debug;
 if (process.env.NODE_DEBUG && /\btunnel\b/.test(process.env.NODE_DEBUG)) {
   debug = function() {
     var args = Array.prototype.slice.call(arguments);
-    if (typeof args[0] === 'string') {
-      args[0] = 'TUNNEL: ' + args[0];
-    } else {
-      args.unshift('TUNNEL:');
-    }
+      if (typeof args[0] === 'string') {
+          args[0] = 'TUNNEL: ' + args[0];
+      } else {
+          args.unshift('TUNNEL:');
+      }
       console.error.apply(console, args);
   }
 } else {
@@ -5640,16 +5650,16 @@ if (process.env.NODE_DEBUG && /\btunnel\b/.test(process.env.NODE_DEBUG)) {
             }));
             Object.defineProperty(exports, "v1", ({
                 enumerable: true,
-  get: function () {
-    return _v.default;
-  }
-}));
-Object.defineProperty(exports, "v3", ({
-  enumerable: true,
-  get: function () {
-    return _v2.default;
-  }
-}));
+                get: function () {
+                    return _v.default;
+                }
+            }));
+            Object.defineProperty(exports, "v3", ({
+                enumerable: true,
+                get: function () {
+                    return _v2.default;
+                }
+            }));
 Object.defineProperty(exports, "v4", ({
   enumerable: true,
   get: function () {
@@ -5731,17 +5741,19 @@ Object.defineProperty(exports, "parse", ({
 
             var _crypto = _interopRequireDefault(__nccwpck_require__(6113));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-function md5(bytes) {
-  if (Array.isArray(bytes)) {
-    bytes = Buffer.from(bytes);
-  } else if (typeof bytes === 'string') {
-    bytes = Buffer.from(bytes, 'utf8');
-  }
+            function md5(bytes) {
+                if (Array.isArray(bytes)) {
+                    bytes = Buffer.from(bytes);
+                } else if (typeof bytes === 'string') {
+                    bytes = Buffer.from(bytes, 'utf8');
+                }
 
-    return _crypto.default.createHash('md5').update(bytes).digest();
-}
+                return _crypto.default.createHash('md5').update(bytes).digest();
+            }
 
             var _default = md5;
             exports["default"] = _default;
@@ -5778,12 +5790,14 @@ function md5(bytes) {
 
             var _validate = _interopRequireDefault(__nccwpck_require__(6900));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-function parse(uuid) {
-  if (!(0, _validate.default)(uuid)) {
-    throw TypeError('Invalid UUID');
-  }
+            function parse(uuid) {
+                if (!(0, _validate.default)(uuid)) {
+                    throw TypeError('Invalid UUID');
+                }
 
   let v;
   const arr = new Uint8Array(16); // Parse ########-....-....-....-............
@@ -5851,15 +5865,15 @@ const rnds8Pool = new Uint8Array(256); // # of random values to pre-allocate
 
 let poolPtr = rnds8Pool.length;
 
-function rng() {
-  if (poolPtr > rnds8Pool.length - 16) {
-      _crypto.default.randomFillSync(rnds8Pool);
+            function rng() {
+                if (poolPtr > rnds8Pool.length - 16) {
+                    _crypto.default.randomFillSync(rnds8Pool);
 
-      poolPtr = 0;
-  }
+                    poolPtr = 0;
+                }
 
-    return rnds8Pool.slice(poolPtr, poolPtr += 16);
-}
+                return rnds8Pool.slice(poolPtr, poolPtr += 16);
+            }
 
             /***/
         }),
@@ -5877,17 +5891,19 @@ function rng() {
 
             var _crypto = _interopRequireDefault(__nccwpck_require__(6113));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-function sha1(bytes) {
-  if (Array.isArray(bytes)) {
-    bytes = Buffer.from(bytes);
-  } else if (typeof bytes === 'string') {
-    bytes = Buffer.from(bytes, 'utf8');
-  }
+            function sha1(bytes) {
+                if (Array.isArray(bytes)) {
+                    bytes = Buffer.from(bytes);
+                } else if (typeof bytes === 'string') {
+                    bytes = Buffer.from(bytes, 'utf8');
+                }
 
-    return _crypto.default.createHash('sha1').update(bytes).digest();
-}
+                return _crypto.default.createHash('sha1').update(bytes).digest();
+            }
 
             var _default = sha1;
             exports["default"] = _default;
@@ -5908,13 +5924,15 @@ function sha1(bytes) {
 
             var _validate = _interopRequireDefault(__nccwpck_require__(6900));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-/**
- * Convert array of 16 byte values to UUID string format of the form:
- * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
- */
-const byteToHex = [];
+            /**
+             * Convert array of 16 byte values to UUID string format of the form:
+             * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+             */
+            const byteToHex = [];
 
 for (let i = 0; i < 256; ++i) {
   byteToHex.push((i + 0x100).toString(16).substr(1));
@@ -5926,12 +5944,12 @@ function stringify(arr, offset = 0) {
   const uuid = (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase(); // Consistency check for valid UUID.  If this throws, it's likely due to one
   // of the following:
   // - One or more input array values don't map to a hex octet (leading to
-  // "undefined" in the uuid)
-  // - Invalid input values for the RFC `version` or `variant` fields
+    // "undefined" in the uuid)
+    // - Invalid input values for the RFC `version` or `variant` fields
 
-  if (!(0, _validate.default)(uuid)) {
-    throw TypeError('Stringified UUID is invalid');
-  }
+    if (!(0, _validate.default)(uuid)) {
+        throw TypeError('Stringified UUID is invalid');
+    }
 
     return uuid;
 }
@@ -5953,11 +5971,13 @@ function stringify(arr, offset = 0) {
             }));
             exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(807));
+            var _rng = _interopRequireDefault(__nccwpck_require__(807));
 
             var _stringify = _interopRequireDefault(__nccwpck_require__(8950));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
 // **`v1()` - Generate time-based UUID**
 //
@@ -6042,11 +6062,11 @@ function v1(options, buf, offset) {
 
   b[i++] = clockseq >>> 8 | 0x80; // `clock_seq_low`
 
-  b[i++] = clockseq & 0xff; // `node`
+    b[i++] = clockseq & 0xff; // `node`
 
-  for (let n = 0; n < 6; ++n) {
-    b[i + n] = node[n];
-  }
+    for (let n = 0; n < 6; ++n) {
+        b[i + n] = node[n];
+    }
 
     return buf || (0, _stringify.default)(b);
 }
@@ -6099,10 +6119,12 @@ function v1(options, buf, offset) {
 
             var _parse = _interopRequireDefault(__nccwpck_require__(2746));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-function stringToBytes(str) {
-  str = unescape(encodeURIComponent(str)); // UTF8 escape
+            function stringToBytes(str) {
+                str = unescape(encodeURIComponent(str)); // UTF8 escape
 
   const bytes = [];
 
@@ -6149,17 +6171,17 @@ function _default(name, version, hashfunc) {
         buf[offset + i] = bytes[i];
       }
 
-      return buf;
+        return buf;
     }
 
-    return (0, _stringify.default)(bytes);
+      return (0, _stringify.default)(bytes);
   } // Function#name is not settable on some platforms (#270)
 
 
-  try {
-    generateUUID.name = name; // eslint-disable-next-line no-empty
-  } catch (err) {
-  } // For CommonJS default export support
+    try {
+        generateUUID.name = name; // eslint-disable-next-line no-empty
+    } catch (err) {
+    } // For CommonJS default export support
 
 
     generateUUID.DNS = DNS;
@@ -6181,14 +6203,16 @@ function _default(name, version, hashfunc) {
             }));
             exports["default"] = void 0;
 
-var _rng = _interopRequireDefault(__nccwpck_require__(807));
+            var _rng = _interopRequireDefault(__nccwpck_require__(807));
 
             var _stringify = _interopRequireDefault(__nccwpck_require__(8950));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-function v4(options, buf, offset) {
-  options = options || {};
+            function v4(options, buf, offset) {
+                options = options || {};
 
   const rnds = options.random || (options.rng || _rng.default)(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
 
@@ -6199,15 +6223,15 @@ function v4(options, buf, offset) {
   if (buf) {
     offset = offset || 0;
 
-    for (let i = 0; i < 16; ++i) {
-      buf[offset + i] = rnds[i];
-    }
+      for (let i = 0; i < 16; ++i) {
+          buf[offset + i] = rnds[i];
+      }
 
-    return buf;
+      return buf;
   }
 
-    return (0, _stringify.default)(rnds);
-}
+                return (0, _stringify.default)(rnds);
+            }
 
             var _default = v4;
             exports["default"] = _default;
@@ -6252,9 +6276,11 @@ function v4(options, buf, offset) {
             }));
             exports["default"] = void 0;
 
-var _regex = _interopRequireDefault(__nccwpck_require__(814));
+            var _regex = _interopRequireDefault(__nccwpck_require__(814));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
             function validate(uuid) {
                 return typeof uuid === 'string' && _regex.default.test(uuid);
@@ -6279,15 +6305,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
             var _validate = _interopRequireDefault(__nccwpck_require__(6900));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+            function _interopRequireDefault(obj) {
+                return obj && obj.__esModule ? obj : {default: obj};
+            }
 
-function version(uuid) {
-  if (!(0, _validate.default)(uuid)) {
-    throw TypeError('Invalid UUID');
-  }
+            function version(uuid) {
+                if (!(0, _validate.default)(uuid)) {
+                    throw TypeError('Invalid UUID');
+                }
 
-    return parseInt(uuid.substr(14, 1), 16);
-}
+                return parseInt(uuid.substr(14, 1), 16);
+            }
 
             var _default = version;
             exports["default"] = _default;
@@ -8068,44 +8096,6 @@ function version(uuid) {
                     headers && this.set(headers);
                 }
 
-                get [Symbol.toStringTag]() {
-                    return 'AxiosHeaders';
-                }
-
-                static from(thing) {
-                    return thing instanceof this ? thing : new this(thing);
-                }
-
-                static concat(first, ...targets) {
-                    const computed = new this(first);
-
-                    targets.forEach((target) => computed.set(target));
-
-                    return computed;
-                }
-
-                static accessor(header) {
-                    const internals = this[$internals] = (this[$internals] = {
-                        accessors: {}
-                    });
-
-                    const accessors = internals.accessors;
-                    const prototype = this.prototype;
-
-                    function defineAccessor(_header) {
-                        const lHeader = normalizeHeader(_header);
-
-                        if (!accessors[lHeader]) {
-                            buildAccessors(prototype, _header);
-                            accessors[lHeader] = true;
-                        }
-                    }
-
-                    utils.isArray(header) ? header.forEach(defineAccessor) : defineAccessor(header);
-
-                    return this;
-                }
-
                 set(header, valueOrRewrite, rewrite) {
                     const self = this;
 
@@ -8269,6 +8259,44 @@ function version(uuid) {
 
                 toString() {
                     return Object.entries(this.toJSON()).map(([header, value]) => header + ': ' + value).join('\n');
+                }
+
+                get [Symbol.toStringTag]() {
+                    return 'AxiosHeaders';
+                }
+
+                static from(thing) {
+                    return thing instanceof this ? thing : new this(thing);
+                }
+
+                static concat(first, ...targets) {
+                    const computed = new this(first);
+
+                    targets.forEach((target) => computed.set(target));
+
+                    return computed;
+                }
+
+                static accessor(header) {
+                    const internals = this[$internals] = (this[$internals] = {
+                        accessors: {}
+                    });
+
+                    const accessors = internals.accessors;
+                    const prototype = this.prototype;
+
+                    function defineAccessor(_header) {
+                        const lHeader = normalizeHeader(_header);
+
+                        if (!accessors[lHeader]) {
+                            buildAccessors(prototype, _header);
+                            accessors[lHeader] = true;
+                        }
+                    }
+
+                    utils.isArray(header) ? header.forEach(defineAccessor) : defineAccessor(header);
+
+                    return this;
                 }
             }
 
@@ -8765,14 +8793,6 @@ function version(uuid) {
                     this.value = value;
                 }
 
-                static escapeName(name) {
-                    return String(name).replace(/[\r\n"]/g, (match) => ({
-                        '\r': '%0D',
-                        '\n': '%0A',
-                        '"': '%22',
-                    }[match]));
-                }
-
                 async* encode() {
                     yield this.headers;
 
@@ -8785,6 +8805,14 @@ function version(uuid) {
                     }
 
                     yield CRLF_BYTES;
+                }
+
+                static escapeName(name) {
+                    return String(name).replace(/[\r\n"]/g, (match) => ({
+                        '\r': '%0D',
+                        '\n': '%0A',
+                        '"': '%22',
+                    }[match]));
                 }
             }
 
@@ -10439,21 +10467,6 @@ function version(uuid) {
                 }
 
                 /**
-                 * Returns an object that contains a new `CancelToken` and a function that, when called,
-                 * cancels the `CancelToken`.
-                 */
-                static source() {
-                    let cancel;
-                    const token = new CancelToken(function executor(c) {
-                        cancel = c;
-                    });
-                    return {
-                        token,
-                        cancel
-                    };
-                }
-
-                /**
                  * Throws a `CanceledError` if cancellation has been requested.
                  */
                 throwIfRequested() {
@@ -10491,6 +10504,21 @@ function version(uuid) {
                     if (index !== -1) {
                         this._listeners.splice(index, 1);
                     }
+                }
+
+                /**
+                 * Returns an object that contains a new `CancelToken` and a function that, when called,
+                 * cancels the `CancelToken`.
+                 */
+                static source() {
+                    let cancel;
+                    const token = new CancelToken(function executor(c) {
+                        cancel = c;
+                    });
+                    return {
+                        token,
+                        cancel
+                    };
                 }
             }
 
@@ -10689,117 +10717,136 @@ function version(uuid) {
 
         /******/
     });
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __nccwpck_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		var threw = true;
-/******/ 		try {
-/******/ 			__webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
-/******/ 			threw = false;
-/******/ 		} finally {
-/******/ 			if(threw) delete __webpack_module_cache__[moduleId];
-/******/ 		}
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/************************************************************************/
-/******/ 	/* webpack/runtime/compat */
-/******/
-/******/ 	if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
-/******/
-/************************************************************************/
-var __webpack_exports__ = {};
+    /************************************************************************/
+    /******/ 	// The module cache
+    /******/
+    var __webpack_module_cache__ = {};
+    /******/
+    /******/ 	// The require function
+    /******/
+    function __nccwpck_require__(moduleId) {
+        /******/ 		// Check if module is in cache
+        /******/
+        var cachedModule = __webpack_module_cache__[moduleId];
+        /******/
+        if (cachedModule !== undefined) {
+            /******/
+            return cachedModule.exports;
+            /******/
+        }
+        /******/ 		// Create a new module (and put it into the cache)
+        /******/
+        var module = __webpack_module_cache__[moduleId] = {
+            /******/ 			// no module.id needed
+            /******/ 			// no module.loaded needed
+            /******/            exports: {}
+            /******/
+        };
+        /******/
+        /******/ 		// Execute the module function
+        /******/
+        var threw = true;
+        /******/
+        try {
+            /******/
+            __webpack_modules__[moduleId].call(module.exports, module, module.exports, __nccwpck_require__);
+            /******/
+            threw = false;
+            /******/
+        } finally {
+            /******/
+            if (threw) delete __webpack_module_cache__[moduleId];
+            /******/
+        }
+        /******/
+        /******/ 		// Return the exports of the module
+        /******/
+        return module.exports;
+        /******/
+    }
+
+    /******/
+    /************************************************************************/
+    /******/ 	/* webpack/runtime/compat */
+    /******/
+    /******/
+    if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = __dirname + "/";
+    /******/
+    /************************************************************************/
+    var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-    const core = __nccwpck_require__(2186);
-    const Axios = __nccwpck_require__(8757);
-    const fs = __nccwpck_require__(7147);
+    (() => {
+        const core = __nccwpck_require__(2186);
+        const Axios = __nccwpck_require__(8757);
+        const fs = __nccwpck_require__(7147);
 
 // most @actions toolkit packages have async methods
-    async function run() {
-        try {
-            const artifactPath = core.getInput('artifactPath', {required: true});
-            const artifactName = artifactPath.split('/').pop();
-            const endpoint = core.getInput('endpoint', {required: true, trimWhitespace: true});
-            const token = core.getInput('token', {required: true, trimWhitespace: true});
-            const serverId = core.getInput('serverId', {required: true, trimWhitespace: true});
-            const doRestart = core.getInput('doRestart', {required: false, trimWhitespace: true}) === 'true';
-            const targetPath = core.getInput('targetPath', {
-                required: false,
-                trimWhitespace: true
-            }) || `config/mods/${artifactName}`;
+        async function run() {
+            try {
+                const artifactPath = core.getInput('artifact', {required: true});
+                const artifactName = artifactPath.split('/').pop();
+                const endpoint = core.getInput('endpoint', {required: true, trimWhitespace: true});
+                const apiToken = core.getInput('token', {required: true, trimWhitespace: true});
+                const serverId = core.getInput('server', {required: true, trimWhitespace: true});
+                const doRestart = core.getInput('restart', {required: false, trimWhitespace: true}) === 'true';
+                const targetPath = core.getInput('target-path', {
+                    required: false,
+                    trimWhitespace: true
+                }) || `config/mods/${artifactName}`;
 
 
-            const buffer = fs.readFileSync(artifactPath);
+                const buffer = fs.readFileSync(artifactPath);
 
-            const axios = Axios.create({
-                baseURL: endpoint,
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Accept": "application/json",
-                }
-            });
-            if (doRestart) {
-                //alert the horde (optional)
-                core.info("Alerting the horde");
-                try {
-                    await axios.post(`/api/client/servers/${serverId}/command`, {
-                        command: "say Server is restarting in 10 seconds (maybe)",
-                    });
-                } catch (e) { /* empty */
-                }
-            }
-            core.info(`Uploading ${artifactName} to ${targetPath}`);
-            //upload file
-            /**
-             * curl "https://pterodactyl.file.properties/api/client/servers/1a7ce997/files/write?file=%2Feula.txt" \
-             *   -H 'Accept: application/json' \
-             *   -H 'Authorization: Bearer apikey' \
-             *   -X POST \
-             *   -b 'pterodactyl_session'='eyJpdiI6InhIVXp5ZE43WlMxUU1NQ1pyNWRFa1E9PSIsInZhbHVlIjoiQTNpcE9JV3FlcmZ6Ym9vS0dBTmxXMGtST2xyTFJvVEM5NWVWbVFJSnV6S1dwcTVGWHBhZzdjMHpkN0RNdDVkQiIsIm1hYyI6IjAxYTI5NDY1OWMzNDJlZWU2OTc3ZDYxYzIyMzlhZTFiYWY1ZjgwMjAwZjY3MDU4ZDYwMzhjOTRmYjMzNDliN2YifQ%3D%3D' \
-             *   -d '#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
-             * #You also agree that tacos are tasty, and the best food in the world.
-             * #Wed Dec 25 05:20:41 UTC 2019
-             * eula=true
-             * '
-             * @type {axios.AxiosResponse<any>}
-             */
-            const uploadFileResponse = await axios.post(`/api/client/servers/${serverId}/files/write`, buffer, {
-                params: {
-                    file: targetPath,
-                }
-            });
-            console.log(uploadFileResponse.data);
-
-            if (doRestart) {
-                core.info("Restarting server");
-                const restartResponse = await axios.post(`/api/client/servers/${serverId}/power`, {
-                    signal: "restart",
+                const axios = Axios.create({
+                    baseURL: endpoint,
+                    headers: {
+                        Authorization: `Bearer ${apiToken}`,
+                        "Accept": "application/json",
+                    }
                 });
-                console.log(restartResponse.data);
-            }
+                if (doRestart) {
+                    //alert the horde (optional)
+                    core.info("Alerting the horde");
+                    try {
+                        await axios.post(`/api/client/servers/${serverId}/command`, {
+                            command: "say Server is restarting in 10 seconds (maybe)",
+                        });
+                    } catch (e) { /* empty */
+                    }
+                }
+                core.info(`Uploading ${artifactName} to ${targetPath}`);
+                //upload file
+                /**
+                 * curl "https://pterodactyl.file.properties/api/client/servers/1a7ce997/files/write?file=%2Feula.txt" \
+                 *   -H 'Accept: application/json' \
+                 *   -H 'Authorization: Bearer apikey' \
+                 *   -X POST \
+                 *   -b 'pterodactyl_session'='eyJpdiI6InhIVXp5ZE43WlMxUU1NQ1pyNWRFa1E9PSIsInZhbHVlIjoiQTNpcE9JV3FlcmZ6Ym9vS0dBTmxXMGtST2xyTFJvVEM5NWVWbVFJSnV6S1dwcTVGWHBhZzdjMHpkN0RNdDVkQiIsIm1hYyI6IjAxYTI5NDY1OWMzNDJlZWU2OTc3ZDYxYzIyMzlhZTFiYWY1ZjgwMjAwZjY3MDU4ZDYwMzhjOTRmYjMzNDliN2YifQ%3D%3D' \
+                 *   -d '#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).
+                 * #You also agree that tacos are tasty, and the best food in the world.
+                 * #Wed Dec 25 05:20:41 UTC 2019
+                 * eula=true
+                 * '
+                 * @type {axios.AxiosResponse<any>}
+                 */
+                const uploadFileResponse = await axios.post(`/api/client/servers/${serverId}/files/write`, buffer, {
+                    params: {
+                        file: targetPath,
+                    }
+                });
+                console.log(uploadFileResponse.data);
 
-        } catch (error) {
-            core.setFailed(error.message);
-        }
+                if (doRestart) {
+                    core.info("Restarting server");
+                    const restartResponse = await axios.post(`/api/client/servers/${serverId}/power`, {
+                        signal: "restart",
+                    });
+                    console.log(restartResponse.data);
+                }
+
+            } catch (error) {
+                core.setFailed(error.message);
+            }
 }
 
 run();
