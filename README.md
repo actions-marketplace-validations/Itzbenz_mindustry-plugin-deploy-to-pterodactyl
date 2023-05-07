@@ -28,7 +28,7 @@ jobs:
           name: ${{ github.event.repository.name }}
           path: build/libs/${{ github.event.repository.name }}.jar
       - name: Deploy
-        uses: Itzbenz/mindustry-plugin-deploy-to-pterodactyl@016baa1e8b1210c4c61cf1235e1cdfeda469e382
+        uses: Itzbenz/mindustry-plugin-deploy-to-pterodactyl@versionhere
         with:
           # The path to the plugin artifact
           artifact: build/libs/${{ github.event.repository.name }}.jar
