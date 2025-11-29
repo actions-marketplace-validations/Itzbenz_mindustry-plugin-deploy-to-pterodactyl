@@ -20,6 +20,10 @@ inputs:
     description: 'Whether to restart the server after deploying the plugin'
     required: false
     default: false
+  force:
+    description: 'Force kill the server if it is running'
+    required: false
+    default: false
 
 outputs:
   time: # output will be available to future steps

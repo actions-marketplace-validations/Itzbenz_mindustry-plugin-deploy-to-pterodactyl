@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const Axios = require('axios');
 const fs = require('fs');
-
+const shared = require('./shared');
 // most @actions toolkit packages have async methods
 async function run() {
     try {
@@ -11,21 +11,17 @@ async function run() {
         const apiToken = core.getInput('token', {required: true, trimWhitespace: true});
         const serverId = core.getInput('server', {required: true, trimWhitespace: true});
         const doRestart = core.getInput('restart', {required: false, trimWhitespace: true}) === 'true';
+        const doForceKill = core.getInput('force', {required: false, trimWhitespace: true}) === 'true';
         const targetPath = core.getInput('target-path', {
             required: false,
             trimWhitespace: true
         }) || `config/mods/${artifactName}`;
 
-
+        core.info(`Artifact: ${artifactPath}`);
         const buffer = fs.readFileSync(artifactPath);
 
-        const axios = Axios.create({
-            baseURL: endpoint,
-            headers: {
-                Authorization: `Bearer ${apiToken}`,
-                "Accept": "application/json",
-            }
-        });
+        const axios=shared.axios;
+        shared.setAxios(endpoint, apiToken);
         if (doRestart) {
             //alert the horde (optional)
             core.info("Alerting the horde");
@@ -59,11 +55,35 @@ async function run() {
         console.log(uploadFileResponse.data);
 
         if (doRestart) {
-            core.info("Restarting server");
-            const restartResponse = await axios.post(`/api/client/servers/${serverId}/power`, {
-                signal: "restart",
-            });
-            console.log(restartResponse.data);
+            if(doForceKill){
+                const lastPowerState = await shared.getResource(serverId).attributes.current_state;
+                if (lastPowerState === "running") {
+                    core.info("Server is running, killing it");
+                    await shared.setPowerState(serverId, "kill");
+                    await shared.waitUntilPowerState(serverId, "offline");
+                }
+                if (lastPowerState === "starting") {
+                    core.info("Server is starting, waiting for it to finish");
+                    await shared.waitUntilPowerState(serverId, "running");
+                    core.info("Server is running, killing it");
+                    await shared.setPowerState(serverId, "kill");
+                    await shared.waitUntilPowerState(serverId, "offline");
+                }
+                const currentPowerState = await shared.getResource(serverId).attributes.current_state;
+                if (currentPowerState !== "offline") {
+                    throw new Error(`Server is not offline, it is ${currentPowerState}`);
+                } else {
+                    //start
+                    core.info("Server is offline, starting it");
+                    await shared.setPowerState(serverId, "start");
+                }
+            }else {
+                core.info("Restarting server");
+                const restartResponse = await axios.post(`/api/client/servers/${serverId}/power`, {
+                    signal: "restart",
+                });
+                console.log(restartResponse.data);
+            }
         }
 
     } catch (error) {
